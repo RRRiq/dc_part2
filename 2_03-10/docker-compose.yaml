@@ -18,8 +18,12 @@ services:
 
   redis:
     image: redis
+
+
   postgres:
     image: postgres:18
+    volumes:
+      - ./database:/var/lib/postgresql
 
     environment:
       POSTGRES_PASSWORD: 12345
