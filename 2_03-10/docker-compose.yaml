@@ -1,24 +1,22 @@
 services:
   frontend:
-    image: rrrrrrriq/example-frontend:v1   
-
-
+    image: rrrrrrriq/example-frontend:v2   
 
   backend:
-    image: rrrrrrriq/example-backend:v1 
+    image: rrrrrrriq/example-backend:v2 
 
 
     environment:
       - REQUEST_ORIGIN=http://localhost:8000
       - REDIS_HOST=redis
-      - POSTGRES_HOST=postgres
+      - POSTGRES_HOST=db
       - POSTGRES_PASSWORD=12345
 
   redis:
     image: redis
 
 
-  postgres:
+  db:
     image: postgres:18
     volumes:
       - ./database:/var/lib/postgresql
